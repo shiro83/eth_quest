@@ -8,14 +8,16 @@
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <!--スタイルシート-->
   <link rel="stylesheet" href="./stylesheets/style.css">
+  <!--参照先scriptを記載-->
   <!-- jQuery読み込み -->
-  <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./lib/web3.min.js"></script>
+  <script type="text/javascript" src="./lib/connect_web3.js"></script>
   <!-- BootstrapのJS読み込み -->
   <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-  <!--参照先scriptを記載-->
-  <script type="text/javascript" src="./javascripts/web3.min.js"></script>
-  <script type="text/javascript" src="./lib/connect_web3.js"></script>
+  <script type="text/javascript" src="./javascripts/front.js"></script>
   <script type="text/javascript" src="./javascripts/exec_set_or_get_num.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -28,6 +30,9 @@
       <div class="col-sm-2" style="background-color:yellow;">Yellow</div>
     </div>
   </div>
+
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+
   <footer style="background-color:gray">Footer</footer>
 
   <!--アドレスを取得-->
