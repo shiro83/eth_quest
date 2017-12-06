@@ -16,7 +16,7 @@ var pie_json =
 };
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/pie', function(req, res, next) {
 
   for(key1 in pie_json.rows) {
     var c = pie_json.rows[key1];
@@ -27,15 +27,13 @@ router.get('/', function(req, res, next) {
       }
     }
   }
-  // $.each(pie_json.rows, function(key, rows) {
-  //   $.each(rows, function(key, c) {
-  //     if (c[0].v == 'a') {
-  //       c[1].v = c[1].v + 1;
-  //     }
-  //   });
-  // });
 
-  res.json(pie_json);
+});
+
+
+router.get('/vote', function(req, res, next) {
+  console.log("vote");
+  // console.log(req.query.vote);
 });
 
 module.exports = router;
