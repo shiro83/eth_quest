@@ -1,6 +1,7 @@
   $(function(){
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
+    setInterval(drawChart,2000);
   });
   function drawChart() {
     var jsonData = $.ajax({

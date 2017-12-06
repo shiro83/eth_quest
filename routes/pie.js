@@ -15,29 +15,25 @@ var pie_json =
   ]
 };
 
-// var cart = [
-//   { name:"タマネギ", price:80, quantity:3 },
-//   { name:"じゃがいも", price:60, quantity:5 },
-//   { name:"ニンジン", price:40, quantity:4 }
-// ];
-//
-// var items = [];
-// var totalPrice = 0;
-// var totalQuantity = 0;
-//
-// for(key in cart){
-//     items.push(cart[key].name);
-//     totalPrice += cart[key].price  * cart[key].quantity ;
-//     totalQuantity += cart[key].quantity ;
-// }
-// output(items) ;
-// output(totalPrice);
-// output(totalQuantity);
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('aaaaaaaaaaa');
-  pie_json[rows][]
+
+  for(key1 in pie_json.rows) {
+    var c = pie_json.rows[key1];
+    for(key in c){
+      if (c[key][0].v == 'a') {
+        c[key][1].v += 1;
+        console.log(c[key][1].v);
+      }
+    }
+  }
+  // $.each(pie_json.rows, function(key, rows) {
+  //   $.each(rows, function(key, c) {
+  //     if (c[0].v == 'a') {
+  //       c[1].v = c[1].v + 1;
+  //     }
+  //   });
+  // });
 
   res.json(pie_json);
 });
