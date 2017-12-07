@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>testdapps</title>
+  <title>enquête</title>
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <!--スタイルシート-->
@@ -21,25 +21,19 @@
 </head>
 
 <body>
-  <h2>testdapps</h2>
-  <header style="background-color:gray">Header</header>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-2" style="background-color:red;">Red</div>
-      <div class="col-sm-8" style="background-color:blue;">Blue</div>
-      <div class="col-sm-2" style="background-color:yellow;">Yellow</div>
-    </div>
-  </div>
+  <h2>アンケート</h2>
+
   <form id="vote_form">
-    <button id="berry_good" class="vote_click" value="berry_good">とてもよかった</button>
-    <button id="good" class="vote_click" value="good">よかった</button>
-    <button id="bad" class="vote_click" value="bad">よくなかった</button>
-    <button id="berry_bad" class="vote_click" value="berry_bad">とてもよくなかった</button>
+    <button id="berry_good" class="vote_click btn btn-primary btn-lg btn-block" value="berry_good">とてもよかった</button>
+    <button id="good" class="vote_click btn btn-success btn-lg btn-block" value="good">よかった</button>
+    <button id="bad" class="vote_click btn btn-warning btn-lg btn-block" value="bad">よくなかった</button>
+    <button id="berry_bad" class="vote_click btn btn-danger btn-lg btn-block" value="berry_bad">とてもよくなかった</button>
   </form>
 
-  <div id="piechart" style="width: 900px; height: 500px;"></div>
-
-  <footer style="background-color:gray">Footer</footer>
+  <div class="chart">
+    <div id="piechart" class="col-md-6" style="width:50%; height: 500px;">a</div>
+    <div id="curve_chart" class="col-md-6" style="width:50%; height: 500px">v</div>
+  </div>
 
   <!--アドレスを取得-->
   <div class="form-group">

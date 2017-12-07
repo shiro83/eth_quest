@@ -1,18 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-// var pie_json = '{"cols": [{"label":"Topping","type":"string"},{"label":"Slices","type":"number"}],"rows": [{"c":[{"v":"Mushrooms"},{"v":3}]},{"c":[{"v":"Onions"},{"v":1}]},{"c":[{"v":"Olives"},{"v":1}]}, {"c":[{"v":"Zucchini"}, {"v":1}]}, {"c":[{"v":"Pepperoni"},{"v":2}]}]}';
-// var pie_json = [{cols: [{label":"Topping","type":"string"},{"label":"Slices","type":"number"}],"rows": [{"c":[{"v":"Mushrooms"},{"v":3}]},{"c":[{"v":"Onions"},{"v":1}]},{"c":[{"v":"Olives"},{"v":1}]}, {"c":[{"v":"Zucchini"}, {"v":1}]}, {"c":[{"v":"Pepperoni"},{"v":2}]}]}];
-
 var pie_json =
 {
-  cols: [{label: 'Topping', type: 'string'},
-         {label: 'Slices', type: 'number'}
+  cols: [{label: 'point', type: 'string'},
+         {label: 'vote', type: 'number'}
   ],
-  rows: [{c:[{v: 'berry_good'},{v: 0}]},
-         {c:[{v: 'good'},{v: 0}]},
-         {c:[{v: 'bad'},{v: 0}]},
-         {c:[{v: 'berry_bad'},{v: 0}]}
+  rows: [{c:[{v: 'berry_good', f: 'とてもよかった'},{v: 0}]},
+         {c:[{v: 'good', f: 'よかった'},{v: 0}]},
+         {c:[{v: 'bad', f: 'よくなかった'},{v: 0}]},
+         {c:[{v: 'berry_bad', f: '最悪'},{v: 0}]}
   ]
 };
 

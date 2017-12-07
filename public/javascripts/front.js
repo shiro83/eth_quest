@@ -1,7 +1,8 @@
   $(function(){
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    setInterval(drawChart,2000);
+    google.charts.setOnLoadCallback(drawChart_pie);
+    google.charts.setOnLoadCallback(drawChart_line);
+    setInterval(drawChart_pie,2000);
 
     $('.vote_click').click(function(event) {
       // HTMLでの送信をキャンセル
@@ -42,7 +43,7 @@
     });
   });
 
-  function drawChart() {
+  function drawChart_pie() {
     var jsonData = $.ajax({
              url: "/sum/pie",
              dataType: "json",
@@ -52,10 +53,36 @@
    var data = new google.visualization.DataTable(jsonData);
 
    var options = {
-     title: 'My Daily Activities'
+     title: 'アンケート',
+     slices: {
+       0: { color: 'blue' },
+       1: { color: 'green' },
+       2: { color: '#ffc107' },
+       3: { color: 'red' }
+     }
    };
 
    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
    chart.draw(data, options);
   }
+
+  function drawChart_line() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'Sales', 'Expenses'],
+    ['2004',  1000,      400],
+    ['2005',  1170,      460],
+    ['2006',  660,       1120],
+    ['2007',  1030,      540]
+  ]);
+
+  var options = {
+    title: 'Company Performance',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+  chart.draw(data, options);
+}
