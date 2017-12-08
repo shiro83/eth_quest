@@ -3,6 +3,7 @@
     google.charts.setOnLoadCallback(drawChart_pie);
     google.charts.setOnLoadCallback(drawChart_line);
     setInterval(drawChart_pie,2000);
+    setInterval(drawChart_line,3000);
 
     $('.vote_click').click(function(event) {
       // HTMLでの送信をキャンセル
@@ -68,21 +69,21 @@
   }
 
   function drawChart_line() {
-  var data = google.visualization.arrayToDataTable([
-    ['Year', 'Sales', 'Expenses'],
-    ['2004',  1000,      400],
-    ['2005',  1170,      460],
-    ['2006',  660,       1120],
-    ['2007',  1030,      540]
-  ]);
+    var jsonData = $.ajax({
+             url: "/sum/line",
+             dataType: "json",
+             async: false
+             }).responseText;
 
-  var options = {
-    title: 'Company Performance',
-    curveType: 'function',
-    legend: { position: 'bottom' }
-  };
+    var data = new google.visualization.DataTable(jsonData);
 
-  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    var options = {
+      title: 'Company Performance',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
 
-  chart.draw(data, options);
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
 }
