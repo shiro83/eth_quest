@@ -7,6 +7,7 @@ const BERRY_GOOD = 'berry_good';
 const GOOD = 'good';
 const BAD = 'bad';
 const BERRY_BAD = 'berry_bad';
+
 const BERRY_GOOD_COEF = 1;
 const GOOD_COEF = 0.8;
 const BAD_COEF = 0.6;
@@ -17,7 +18,7 @@ var pie_json =
   cols: [{label: 'point', type: 'string'},
          {label: 'vote', type: 'number'}
   ],
-  rows: [{c:[{v: BERRY_GOOD},{v: 0}]},
+  rows: [{c:[{v: BERRY_GOOD, f: 'とてもよかった'},{v: 0}]},
          {c:[{v: GOOD, f: 'よかった'},{v: 0}]},
          {c:[{v: BAD, f: 'よくなかった'},{v: 0}]},
          {c:[{v: BERRY_BAD, f: '最悪'},{v: 0}]}

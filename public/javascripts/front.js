@@ -5,6 +5,15 @@
     setInterval(drawChart_pie,2000);
     setInterval(drawChart_line,3000);
 
+
+    $("#future_date").countdowntimer({
+      minutes :3,
+      size : "xl"
+    });
+    function timeIsUp() {
+   		//Your code
+   	}
+
     $('.vote_click').click(function(event) {
       // HTMLでの送信をキャンセル
       event.preventDefault();
