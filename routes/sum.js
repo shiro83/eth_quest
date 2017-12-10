@@ -13,24 +13,31 @@ const GOOD_COEF = 0.8;
 const BAD_COEF = 0.6;
 const BERRY_BAD_COEF = 0.3;
 
-var pie_json =
-{
-  cols: [{label: 'point', type: 'string'},
-         {label: 'vote', type: 'number'}
-  ],
-  rows: [{c:[{v: BERRY_GOOD, f: 'とてもよかった'},{v: 0}]},
-         {c:[{v: GOOD, f: 'よかった'},{v: 0}]},
-         {c:[{v: BAD, f: 'よくなかった'},{v: 0}]},
-         {c:[{v: BERRY_BAD, f: '最悪'},{v: 0}]}
-  ]
-};
+var pie_json;
+var line_json;
 
-var line_json =
-{
-  cols: [{label: 'time', type: 'string'},
-         {label: 'Compensation', type: 'number'}],
-  rows: [{c:[{v: '00:00:00'},{v: base_eth}]}]
-};
+router.get('/init', function(req, res, next) {
+  pie_json =
+  {
+    cols: [{label: 'point', type: 'string'},
+           {label: 'vote', type: 'number'}
+    ],
+    rows: [{c:[{v: BERRY_GOOD, f: 'とてもよかった'},{v: 0}]},
+           {c:[{v: GOOD, f: 'よかった'},{v: 0}]},
+           {c:[{v: BAD, f: 'よくなかった'},{v: 0}]},
+           {c:[{v: BERRY_BAD, f: '最悪'},{v: 0}]}
+    ]
+  };
+
+  line_json =
+  {
+    cols: [{label: 'time', type: 'string'},
+           {label: '報酬', type: 'number'}],
+    rows: []
+  };
+  res.send();
+});
+
 
 router.get('/pie', function(req, res, next) {
   res.json(pie_json);
