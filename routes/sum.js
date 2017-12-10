@@ -47,6 +47,12 @@ router.get('/pie', function(req, res, next) {
 router.get('/vote', function(req, res, next) {
   console.log(req.query.vote);
   var vote_val = req.query.vote;
+
+  if(!pie_json){
+    res.send();
+    return;
+  }
+
   for(key1 in pie_json.rows) {
     var c = pie_json.rows[key1];
     for(key in c){

@@ -3,44 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <title>enquête</title>
+  <title>アンケート</title>
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <!-- jQuery読み込み -->
   <script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="./lib/web3.min.js"></script>
-  <script type="text/javascript" src="./lib/connect_web3.js"></script>
-  <script type="text/javascript" src="./lib/jQuery.countdownTimer.min.js"></script>
-  <script type="text/javascript" src="./javascripts/front.js"></script>
-  <script type="text/javascript" src="./javascripts/exec_set_or_get_num.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="./javascripts/front_index.js"></script>
   <!-- BootstrapのJS読み込み -->
   <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-  <style>
-    #future_date {
-      font-weight: bold;
-      font-size: 100px;
-      /*margin-top: 30px;*/
-      /*margin-bottom: 30px;*/
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
-  <h2>アンケート</h2>
+  <div class="container">
+    <h2>アンケート</h2>
+    <p>発表はどうでしたか？</p>
 
-  <div class="container">
-  <div class="row">
-  <button id="start_button" class="btn btn-info btn-lg col-md-6">Start!</button>
-  </div>  </div>
-  <div class="container">
-    <div class="row">
-      <dev id="future_date" class="col-md-12"></dev>
-    </div>
-  </div>
-
-  <div class="container">
     <form id="vote_form">
       <button id="berry_good" class="vote_click btn btn-primary btn-lg btn-block" value="berry_good">とてもよかった</button>
       <button id="good" class="vote_click btn btn-success btn-lg btn-block" value="good">よかった</button>
@@ -48,73 +25,6 @@
       <button id="berry_bad" class="vote_click btn btn-danger btn-lg btn-block" value="berry_bad">とてもよくなかった</button>
     </form>
   </div>
-
-
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <td><div id="piechart" class="col-sm-5" style="height: 500px;"></div></td>
-      <td><div id="curve_chart" class="col-sm-7" style="height: 500px"></div></td>
-    </div>
-  </div> -->
-
-  <table>
-    <tr>
-      <td>
-        <div id="piechart" style="width:550px; height: 500px;"></div>
-      </td>
-      <td>
-        <div id="curve_chart" style="width:850px; height: 500px"></div>
-      </td>
-    </tr>
-  </table>
-  <!-- <div class="chart">
-    <div id="piechart" class="col-md-6" style="width:50%; height: 500px;">a</div>
-    <div id="curve_chart" class="col-md-6" style="width:50%; height: 500px">v</div>
-  </div> -->
-
-  <!--アドレスを取得-->
-  <div class="form-group">
-    <label for="get_Address">[アドレス（テスト用）]:</label>
-    <br>
-    <div id="addr"></div>
-  </div>
-  <!--値をセット-->
-  <div class="form-group">
-    <!--コントラクト実行アカウントを入力-->
-    <br>
-    <label for="input_from">[送信用アドレス]：</label>
-    <br>
-    <input type="text" name="input_from" id="input_from" class="form-control">
-    <br><br>
-    <!--パスワードを入力-->
-    <label for="input_pw">[パスワード（送信用アドレス）]：</label>
-    <br>
-    <input type="password" name="input_pw" id="input_pw" class="form-control">
-    <br><br>
-    <!--値を入力-->
-    <label for="input_set_num">[入力値]：</label>
-    <br>
-    <input type="text" name="input_set_num" id="input_set_num" class="form-control">
-    <br>
-  </div>
-  <br>
-  <div class="form-group">
-    <button id="btn_set_num" onclick="input_set_num();">送信ボタン</button>
-  </div>
-  <br>
-  <!--値を出力-->
-  <div class="form-group">
-    <label for="output_get_num">[出力値]：</label>
-    <pre id="output_get_num"></pre>
-    <button id="btn_get_num">取得ボタン</button>
-  </div>
-  <br>
-  <!-- ログ出力 -->
-  <div class="form-group-box_logs">
-    <label for="box_logs">ログ情報（送信）：</lavel>
-    <pre id="box_logs_pending"></pre>
-    <label for="box_logs">ログ情報（完了）：</lavel>
-    <pre id="box_logs_complete"></pre>
-</div>
 </body>
+
 </html>

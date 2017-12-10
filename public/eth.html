@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>enquête</title>
+  <title>スマートコントラクト</title>
   <!-- BootstrapのCSS読み込み -->
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <!-- jQuery読み込み -->
@@ -11,7 +11,7 @@
   <script type="text/javascript" src="./lib/web3.min.js"></script>
   <script type="text/javascript" src="./lib/connect_web3.js"></script>
   <script type="text/javascript" src="./lib/jQuery.countdownTimer.min.js"></script>
-  <script type="text/javascript" src="./javascripts/front.js"></script>
+  <script type="text/javascript" src="./javascripts/front_eth.js"></script>
   <script type="text/javascript" src="./javascripts/exec_set_or_get_num.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- BootstrapのJS読み込み -->
@@ -28,7 +28,7 @@
 </head>
 
 <body>
-  <h2>アンケート</h2>
+  <h2>スマートコントラクト</h2>
 
   <div class="container">
   <div class="row">
@@ -40,23 +40,6 @@
     </div>
   </div>
 
-  <div class="container">
-    <form id="vote_form">
-      <button id="berry_good" class="vote_click btn btn-primary btn-lg btn-block" value="berry_good">とてもよかった</button>
-      <button id="good" class="vote_click btn btn-success btn-lg btn-block" value="good">よかった</button>
-      <button id="bad" class="vote_click btn btn-warning btn-lg btn-block" value="bad">よくなかった</button>
-      <button id="berry_bad" class="vote_click btn btn-danger btn-lg btn-block" value="berry_bad">とてもよくなかった</button>
-    </form>
-  </div>
-
-
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <td><div id="piechart" class="col-sm-5" style="height: 500px;"></div></td>
-      <td><div id="curve_chart" class="col-sm-7" style="height: 500px"></div></td>
-    </div>
-  </div> -->
-
   <table>
     <tr>
       <td>
@@ -67,10 +50,6 @@
       </td>
     </tr>
   </table>
-  <!-- <div class="chart">
-    <div id="piechart" class="col-md-6" style="width:50%; height: 500px;">a</div>
-    <div id="curve_chart" class="col-md-6" style="width:50%; height: 500px">v</div>
-  </div> -->
 
   <!--アドレスを取得-->
   <div class="form-group">
