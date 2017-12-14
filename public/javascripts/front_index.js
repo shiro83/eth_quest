@@ -8,7 +8,7 @@
 
       // 送信
       $.ajax({
-        url: "/sum/vote",
+        url: "/chart/vote",
         async: false,
         data: {
           "vote": val
